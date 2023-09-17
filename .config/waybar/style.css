@@ -81,7 +81,7 @@ window#waybar.chromium {
 }
 
 #workspaces button.active {
-    color: @blue;
+    color: @mauve;
 }
 
 
