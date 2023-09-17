@@ -10,10 +10,10 @@
 # to the user's home directory starting with `~/`.
 import:
   # uncomment the flavour you want below:
-#  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-  - ~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.yml
-#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
-#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+#  - ~/.config/alacritty/catppuccin-mocha.yml
+  - ~/.config/alacritty/themes/catppuccin-macchiato.yml
+#  - ~/.config/alacritty/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin-latte.yml
 #  - ~/.config/alacritty/themes/dracula.yml
 
 font:
