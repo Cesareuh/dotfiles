@@ -1,4 +1,4 @@
-@import "themes/macchiato.css";
+@import "themes/mocha.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Hack Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
