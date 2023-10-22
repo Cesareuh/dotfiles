@@ -20,6 +20,7 @@
     "custom/separator", 
     "battery", 
     "custom/separator", "clock"],
+    
 
     "hyprland/workspaces": {
         "format": "{icon}",
