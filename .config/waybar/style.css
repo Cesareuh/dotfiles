@@ -81,9 +81,6 @@ window#waybar.chromium {
     padding : 0 0px;
 }
 
-#workspaces button.active {
-    color: @mauve;
-}
 
 
 button {
@@ -92,13 +89,11 @@ button {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
-}
 
-#workspaces button {
+    
     padding: 0 5px;
     background-color: transparent;
 }
-
 #workspaces button:hover {
     padding-right: 8px;
     background: @surface0;
@@ -109,13 +104,16 @@ button {
     background-color: #eb4d4b;
 }
 
-#workspaces button.persistent {
+
+#workspaces button.empty{
     color: @overlay0;
 }
 
-.empty{
-    background-color: transparent;
+
+#workspaces button.active {
+    color: @mauve;
 }
+
 
 @keyframes blink {
     to {

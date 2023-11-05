@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 37, // Waybar height (to be removed for auto height)
     //"width": 1900, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     //"output": ["eDP-1", "HDMI-A-1"],
@@ -28,7 +28,7 @@
             "active": "",
             "default": "",
             "persistent": "",
-            "empty": "empty"
+	    "empty": "",
         },
            "persistent_workspaces": {
                 "HDMI-A-1": 5, // 5 workspaces by default on every monitor
