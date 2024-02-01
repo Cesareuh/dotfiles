@@ -1,0 +1,3 @@
+colorscheme catppuccin_mocha
+set number
+set relativenumber
