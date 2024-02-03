@@ -118,6 +118,8 @@ require("lazy").setup({
     -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
+  { import = 'plugins.java.init' },
+
 }, {})
 
 vim.cmd.colorscheme "catppuccin-mocha"
@@ -156,6 +158,9 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- [[ Java setup ]]
+require('java').setup()
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
