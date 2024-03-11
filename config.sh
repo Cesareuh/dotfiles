@@ -3,7 +3,7 @@
 cd config
 
 for i in *; do
-	if [ -f ~/.config/$i ]; then
+	if [ -d ~/.config/$i ]; then
 		rm ~/.config/$i
 		echo "delete : $i"
 	fi
