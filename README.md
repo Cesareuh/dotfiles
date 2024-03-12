@@ -1,3 +1,5 @@
 # dotfiles
-## Where to put files
-All of the dotfiles from `home` folder are relative to `~/` path
+## Requirements
+need to install : ```sshfs```
+## Install
+To install : run the ```config.sh``` script
