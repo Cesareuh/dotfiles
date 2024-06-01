@@ -1,7 +1,7 @@
-@import "themes/mocha.css";
+@import "themes/rose-pine.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Hack Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Hack Nerd Font, FontAwesome, Noto Sans CJK JP, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
 }
 
@@ -72,16 +72,14 @@ window#waybar.chromium {
     padding-top: 1px;
     padding-left: 3px;
     padding-right: 3px;
-    opacity: .85;
+    opacity: .9;
 }
 
 #custom-separator {
-    color: @overlay0;
+    color: @overlay;
     margin : 0 0px;
     padding : 0 0px;
 }
-
-
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -96,7 +94,7 @@ button {
 }
 #workspaces button:hover {
     padding-right: 8px;
-    background: @surface0;
+    background: @surface;
 }
 
 
@@ -106,13 +104,13 @@ button {
 
 
 #workspaces button.empty{
-    color: @overlay0;
+    color: @overlay;
 }
 
 
-#workspaces button.active {
-    color: @mauve;
-}
+/* #workspaces button.active { */
+/*     color: @iris; */
+/* } */
 
 
 @keyframes blink {
@@ -121,6 +119,23 @@ button {
         color: #000000;
     }
 }
+
+#cpu {
+    color : @love;
+}
+
+#memory, #clock, #workspaces button.active {
+    color : @gold;
+}
+
+#network, .custom-spotify {
+    color : @foam;
+}
+
+#pulseaudio, #workspaces button {
+    color : @iris;
+}
+
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
