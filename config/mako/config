@@ -1,0 +1,9 @@
+max-visible=2
+font=HackNerdFont Regular 10
+text-alignment=left
+text-color=#c0caf5
+background-color=#1a1b2687
+border-color=#bb9af7d4
+border-radius=10
+default-timeout=10000
+layer=overlay

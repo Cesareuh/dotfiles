@@ -1,3 +1,3 @@
 require("config.general")
 require("config.lazy")
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme tokyonight")
