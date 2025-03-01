@@ -1,2 +1,0 @@
-Refaire le système des lsp et réorganiser les plugins
-S'inspirer de : https://github.com/axkirillov/nvim-config/blob/main/lua/plugins/lsp_config.lua
