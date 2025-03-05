@@ -8,7 +8,9 @@
     // Choose the order of the modules
 
 	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+
 	"modules-center": ["cava"],
+
 	"modules-right": ["cpu", 
 	"custom/separator", 
 	"memory",
