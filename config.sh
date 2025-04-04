@@ -46,8 +46,6 @@ if [ $answer = "y" ]; then
 	echo "Yay installed"
 fi
 
-
-
 read -p "Install packages used by these dotfiles (installing with yay) ? [y/N] : " answer
 
 if [ -z $answer ]; then
@@ -55,34 +53,17 @@ if [ -z $answer ]; then
 fi
 
 if [ $answer = "y" ]; then
-	yay -S zsh wget hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-cjk noto-fonts-emoji
+	yay -S fish starship hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-cjk noto-fonts-emoji
 fi
 
-read -p "Set default shell to zsh [y/N] : " answer
+read -p "Set default shell to fish [y/N] : " answer
 
 if [ -z $answer ]; then
 	answer="n"
 fi
 
 if [ $answer = "y" ]; then
-	chsh -s /usr/bin/zsh
-fi
-
-read -p "Install Oh My Zsh ? [y/N] : " answer
-if [ -z $answer ]; then
-	answer="n"
-fi
-if [ $answer = "y" ]; then
-	# Bloque pendant l'installation, il faut juste faire CTRL+D après l'installation
-	sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
-	read -p "Install Powerlevel10k ? [y/N] : " answer
-	if [ -z $answer ]; then
-		answer="n"
-	fi
-	if [ $answer = "y" ]; then
-		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-	fi
+	chsh -s /usr/bin/fish
 fi
 
 echo "Installing config files"
@@ -97,7 +78,7 @@ for i in *; do
 	if [ $i = "config" ]; then
 		cd config
 		for j in *; do
-			if [ -f ~/$i ] || [ -d ~/.config/$j ]; then
+			if [ -f ~/.config/$j ] || [ -d ~/.config/$j ]; then
 				rm -r ~/.config/$j
 				echo "Deleting link to $j"
 			fi

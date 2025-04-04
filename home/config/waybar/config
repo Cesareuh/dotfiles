@@ -42,9 +42,9 @@
 		"empty": "",
 	    },
 	    "persistent-workspaces": {
-		"HDMI-A-1": 10, // 5 workspaces by default on every monitor
+		"HDMI-A-1": 5, // 5 workspaces by default on every monitor
 		//"eDP-1": 10 , // 10 workspaces by default on every monitor
-		"eDP-1": 10 , // 10 workspaces by default on every monitor
+		"eDP-2": 10 , // 10 workspaces by default on every monitor
 		//"HDMI-A-2": 5, // 5 workspaces by default on every monitor
 	    }
 	},
