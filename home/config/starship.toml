@@ -56,6 +56,8 @@ tag_symbol = '  '
 
 [git_status]
 format = ' ([\[$all_status$ahead_behind\]]($style) )'
+ahead = '[⇡](green)'
+staged = '[+](yellow)'
 
 [golang]
 symbol = " "
