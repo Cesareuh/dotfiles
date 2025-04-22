@@ -22,6 +22,3 @@ The ```config.sh``` script will help you install my dotfiles but use it only if 
 
 ### Safe install
 You can use it without any risk if you are running it on a new user
-
-## TODO
- - hypridle and hyprlock not working
