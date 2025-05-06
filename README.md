@@ -11,7 +11,7 @@ Feel free to copy my files and use it as you want.
  - ⚙️ Bar : [waybar](https://github.com/Alexays/Waybar)
  - 💻 Terminal : [kitty](https://sw.kovidgoyal.net/kitty)
  - 🚀 Launcher : [fuzzel](https://codeberg.org/dnkl/fuzzel)
- - 🌈 Theme : [tokyo-night-storm](https://github.com/tokyo-night/tokyo-night-vscode-theme)
+ - 🌈 Theme : [Gruvbox](https://github.com/morhetz/gruvbox)
  - 🔔 Notification daemon : [mako](https://github.com/emersion/mako)
 ## Automatic install
 The ```config.sh``` script will help you install my dotfiles but use it only if you **KNOW WHAT YOU DO**     
