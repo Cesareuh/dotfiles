@@ -53,7 +53,7 @@ if [ -z $answer ]; then
 fi
 
 if [ $answer = "y" ]; then
-	yay -S fish starship hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-cjk noto-fonts-emoji
+	yay -S fish starship hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-emoji
 fi
 
 read -p "Set default shell to fish [y/N] : " answer
@@ -102,8 +102,8 @@ shopt -u dotglob
 
 echo "Setting up Papirus icons"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-echo "Setting up Tokyonight dark storm gtk theme"
-gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark-Storm"
+echo "Setting up Gruvbox-Dark gtk theme"
+gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark"
 
 systemctl --user enable --now hyprpaper
 systemctl --user enable --now hypridle

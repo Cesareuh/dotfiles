@@ -4,6 +4,9 @@ vim.g.mapleader = ' '
 -- Enable 24-bit colors
 vim.opt.termguicolors = true
 
+-- Light or dark theme
+vim.o.background = "dark"
+
 -- indent options
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4

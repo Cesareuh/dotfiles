@@ -1,74 +1,102 @@
+@import "./themes/gruvbox.css";
+
+
+@define-color workspaces @bg4;
+@define-color window @bg2;
+@define-color center @bg4;
+@define-color center-alt @bg2;
+@define-color tray @bg4;
+@define-color network @bg3;
+@define-color backlight @bg2;
+@define-color wireplumber @bg1;
+@define-color battery @bg0;
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Hack Nerd Font, FontAwesome, Noto Sans CJK JP, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
+	/* color: @fg0; */
+	margin: 0;
+	padding: 0;
 }
 
-window#waybar {
-    background: transparent;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-.modules-right,
-.modules-center,
-#workspaces,
 #window,
-.custom-spotify{
-    background-color: #24283b;
-    border-radius: 10px;
-    margin: 0 2px;
-    margin-top: 5px;
-    padding: 3px 7px;
-}
-
-#cpu,
-#memory,
+#workspaces button label,
+#cava,
+#clock,
+#tray,
 #network,
 #backlight,
 #wireplumber,
-#battery,
-#tray,
-#clock{
-    margin: 0 10px;
+#battery{
+	padding: 0 .5em;
 }
 
-#custom-separator {
-    color: #565f89;
-    margin : 0 0px;
-    padding : 0 0px;
+window#waybar{
+    background-color: @bg0;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 10px;
-    padding: 0 7px;
-    background-color: transparent;
-	transition: 0.4s;
+#workspaces{
+	background-color: @workspaces;
+}
+
+#workspaces button{
+	color: @fg0;
+	font-size: 5em;
+}
+
+#workspaces button.empty{
+	color: @bg0;
 }
 
 #workspaces button:hover {
     /* padding-right: 8px; */
-    background: #565f89;
+	color: @bg0;
+    background: @fg2;
+	border-radius: 0;
 }
 
-
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @red1;
+}
+
+#window {
+	background-color: @window;
+}
+
+/* CENTER MODULES */
+
+#cava {
+	background-color: @center;
+}
+
+#clock {
+	background-color: @center-alt;
+}
+
+#clock.time {
+	padding: 0 1em;
+}
+
+/* RIGHT MODULES */
+#tray{
+	background-color: @tray;
+}
+
+#network{
+	background-color: @network;
+}
+
+#backlight{
+	background-color: @backlight;
+}
+
+#wireplumber{
+	background-color: @wireplumber;
+}
+
+#battery{
+	background-color: @battery;
 }
 
 @keyframes blink {
@@ -76,30 +104,6 @@ button {
         background-color: #ffffff;
         color: #000000;
     }
-}
-
-#cpu, #battery{
-    color : #f7768e;
-}
-
-#workspaces button.empty{
-    color: #565f89;
-}
-
-#pulseaudio, #workspaces button, #tray, #wireplumber, #window {
-    color : #bb9af7;
-}
-
-#memory, #clock, #workspaces button.active {
-    color : #ff9e64;
-}
-
-#network, .custom-spotify, #cava {
-    color : #73daca;
-}
-
-#backlight {
-	color : #e0af68;
 }
 
 #battery.critical:not(.charging) {
@@ -112,35 +116,54 @@ button {
     animation-direction: alternate;
 }
 
+/* ARROWS */
 
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
+#custom-arrow-right,
+#custom-arrow-left {
+    padding: 0;
+    font-family: Hack Nerd Font Mono;
+    font-size: 1.3em;
 }
 
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+#custom-arrow-right.workspaces{
+	color: @workspaces;
+	background-color: @window;
 }
 
-#keyboard-state > label {
-    padding: 0 5px;
+#custom-arrow-right.window{
+	color: @window;
 }
 
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+#custom-arrow-left.center, #custom-arrow-right.center{
+	color: @center;
+	background-color: @center-alt;
 }
 
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+#custom-arrow-left.center-left, #custom-arrow-right.center-right{
+	color: @center-alt;
 }
 
-#scratchpad.empty {
-	background-color: transparent;
+#custom-arrow-left.tray{
+	color: @tray;
+	background-color: @bg0;
+}
+
+#custom-arrow-left.network{
+	color: @network;
+	background-color: @tray;
+}
+
+#custom-arrow-left.backlight{
+	color: @backlight;
+	background-color: @network;
+}
+
+#custom-arrow-left.wireplumber{
+	color: @wireplumber;
+	background-color: @backlight;
+}
+
+#custom-arrow-left.battery{
+	color: @battery;
+	background-color: @wireplumber;
 }

@@ -1,3 +1,4 @@
 require("config.general")
 require("config.lazy")
-vim.cmd("colorscheme tokyonight")
+require("config.lsp")
+vim.cmd("colorscheme gruvbox")

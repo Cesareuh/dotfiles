@@ -5,41 +5,46 @@
 	//"width": 1900, // Waybar width
 	//"spacing": 4, // Gaps between modules (4px)
     //"output": ["eDP-2", "HDMI-A-1"],
-    // Choose the order of the modules
 
-	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+	"modules-left": [
+		"hyprland/workspaces", "custom/arrow-right#workspaces",
+		"hyprland/window", "custom/arrow-right#window"
+	],
 
-	"modules-center": ["cava"],
+	"modules-center": [
+		"custom/arrow-left#center-left",
+		"clock#time",
+		"custom/arrow-left#center",
+		"cava",
+		"custom/arrow-right#center",
+		"clock#day",
+		"custom/arrow-right#center-right"
+	],
 
-	"modules-right": ["cpu", 
-	"custom/separator", 
-	"memory",
-	"custom/separator", 
-	"network", 
-	"custom/separator", 
-	"backlight", 
-	"custom/separator", 
-	"wireplumber", 
-	"custom/separator", 
-	"battery", 
-	"custom/separator", "tray",
-	"custom/separator", "clock"],
+	"modules-right": [ 
+		"custom/arrow-left#tray", "tray",
+		"custom/arrow-left#network", "network", 
+		"custom/arrow-left#backlight", "backlight", 
+		"custom/arrow-left#wireplumber", "wireplumber", 
+		"custom/arrow-left#battery", "battery", 
+	],
 
 
 	"hyprland/workspaces": {
 	    "format": "{icon}",
 	    "format-icons": {
-		"1" : "一",
-		"2" : "二",
-		"3" : "三",
-		"4" : "四",
-		"5" : "五",
-		"6" : "六",
-		"7" : "七",
-		"8" : "八",
-		"9" : "九",
-		"10" : "十",
-		"empty": "",
+			"1" : "",
+			"2" : "",
+			"3" : "",
+			"4" : "",
+			"5" : "",
+			"6" : "",
+			"7" : "",
+			"8" : "",
+			"9" : "",
+			"10" : "",
+			"active": "",
+			"empty": "",
 	    },
 	    "persistent-workspaces": {
 		"HDMI-A-1": 5, // 5 workspaces by default on every monitor
@@ -47,6 +52,10 @@
 		"eDP-2": 10 , // 10 workspaces by default on every monitor
 		//"HDMI-A-2": 5, // 5 workspaces by default on every monitor
 	    }
+	},
+
+	"hyprland/window": {
+		"max-length": 40,
 	},
 
 	"keyboard-state": {
@@ -59,19 +68,29 @@
 	    }
 	},
 
-	"clock": {
+	"clock#day": {
+	    "interval": 60,
+	    "format": "{:%d/%m/%y}",
+	    "max-length": 25,
+	    "tooltip": false,
+	},
+
+	"clock#time": {
 	    "interval": 60,
 	    "format": "{:%H:%M}",
-	    "max-length": 25
+	    "max-length": 25,
+	    "tooltip": false,
 	},
 
 	"cpu": {
 	    "format": "{usage}% ",
 	    "tooltip": false
 	},
+
 	"memory": {
 	    "format": "{}% "
 	},
+
 	"temperature": {
 	    // "thermal-zone": 2,
 	    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -80,11 +99,13 @@
 	    "format": "{temperatureC}°C {icon}",
 	    "format-icons": ["", "", ""]
 	},
+
 	"backlight": {
 	    // "device": "acpi_video1",
 	    "format": "{percent}% {icon}",
 	    "format-icons": ["", "", "", "", "", "", "", "", ""],
 	},
+
 	"battery": {
 	    "states": {
 		// "good": 95,
@@ -103,37 +124,21 @@
 	"network": {
 	    // "interface": "wlp2*", // (Optional) To force the use of this interface
 	    //"format-wifi": "{essid} ({signalStrength}%) ",
-	    "format-wifi": "{signalStrength}% ",
+	    "format-wifi": "{icon}",
 	    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
 	    "tooltip-format": "{ifname} via {gwaddr} ",
 	    "format-linked": "{ifname} (No IP) ",
 	    "format-disconnected": "Disconnected ⚠",
-	    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-	},
-	"pulseaudio": {
-	    // "scroll-step": 1, // %, can be a float
-	    "format": "{volume}% {icon} {format_source}",
-	    "format-bluetooth": "{volume}% {icon} {format_source}",
-	    "format-bluetooth-muted": " {icon} {format_source}",
-	    "format-muted": "  {format_source}",
-	    "format-source": "{volume}% ",
-	    "format-source-muted": "",
-	    "format-icons": {
-		"headphone": "",
-		"hands-free": "",
-		"headset": "",
-		"phone": "",
-		"portable": "",
-		"car": "",
-		"default": ["", "", ""]
-	    },
-	    "on-click": "pavucontrol"
+	    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
 	},
 
 	"wireplumber": {
 		"format": "{volume}% {icon}",
 		"format-muted": " ",
-		"on-click": "helvum",
+		"on-click": "pavucontrol",
+		"on-click-middle": "sonusmix",
+		"on-click-right": "qjackctl",
 		"format-icons": ["", "", ""]
 	},
 
@@ -160,6 +165,11 @@
                    }
     },
 
+	"tray": {
+	    "icon-size": 21,
+	    "spacing": 10
+	},
+
 	"custom/spotify": {
 	    "exec": "/usr/bin/python3 .config/waybar/mediaplayer.py --player spotify",
 	    "format": "{}  ",
@@ -174,8 +184,62 @@
 	    "interval": "once",
 	    "tooltip": false
 	},
-	"tray": {
-	    "icon-size": 21,
-	    "spacing": 10
+
+	// ARROWS
+
+	"custom/arrow-right#workspaces": {
+		"format": "",
+	    "tooltip": false,
 	},
+
+	"custom/arrow-right#window": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#center-left": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#center": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-right#center": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-right#center-right": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#battery": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#wireplumber": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#backlight": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#network": {
+		"format": "",
+	    "tooltip": false,
+	},
+
+	"custom/arrow-left#tray": {
+		"format": "",
+	    "tooltip": false,
+	},
+
 }

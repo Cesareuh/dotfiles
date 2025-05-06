@@ -6,7 +6,6 @@ format = '''
 [╰─](black)[❯](bold green) 
 '''
 
-
 [aws]
 symbol = "  "
 
@@ -29,7 +28,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-format = '$home_symbo[$read_only](bold red)[$path](bold cyan)'
+format = '[$read_only](bold red)[$path](bold cyan)'
 read_only = "󰌾 "
 
 [docker_context]

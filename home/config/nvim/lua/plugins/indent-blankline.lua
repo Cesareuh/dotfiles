@@ -16,13 +16,13 @@ return {
 	-- create the highlight groups in the highlight setup hook, so they are reset
 	-- every time the colorscheme changes
 	hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-	    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#f7768e" })
-	    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#e0af68" })
-	    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#7aa2f7" })
-	    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#ff9e64" })
-	    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#9ece6a" })
-	    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#bb9af7" })
-	    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#73daca" })
+	    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#cc241d" })
+	    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#d79921" })
+	    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#458588" })
+	    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#d65d0e" })
+	    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98971a" })
+	    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#b16286" })
+	    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#689d6a" })
 	end)
 
 	local ibl = require"ibl"
