@@ -23,7 +23,7 @@
 
 	"modules-right": [ 
 		"custom/arrow-left#tray", "tray",
-		"custom/arrow-left#network", "network", 
+		//"custom/arrow-left#network", "network", 
 		"custom/arrow-left#backlight", "backlight", 
 		"custom/arrow-left#wireplumber", "wireplumber", 
 		"custom/arrow-left#battery", "battery", 
@@ -49,7 +49,7 @@
 	    "persistent-workspaces": {
 		"HDMI-A-1": 5, // 5 workspaces by default on every monitor
 		//"eDP-1": 10 , // 10 workspaces by default on every monitor
-		"eDP-2": 10 , // 10 workspaces by default on every monitor
+		"eDP-1": 10 , // 10 workspaces by default on every monitor
 		//"HDMI-A-2": 5, // 5 workspaces by default on every monitor
 	    }
 	},
@@ -70,7 +70,7 @@
 
 	"clock#day": {
 	    "interval": 60,
-	    "format": "{:%d/%m/%y}",
+	    "format": "{:%d/%m}",
 	    "max-length": 25,
 	    "tooltip": false,
 	},

@@ -5,8 +5,8 @@
 @define-color window @bg2;
 @define-color center @bg4;
 @define-color center-alt @bg2;
-@define-color tray @bg4;
-@define-color network @bg3;
+@define-color tray @bg3;
+/* @define-color network @bg3; */
 @define-color backlight @bg2;
 @define-color wireplumber @bg1;
 @define-color battery @bg0;
@@ -74,18 +74,14 @@ window#waybar{
 	background-color: @center-alt;
 }
 
-#clock.time {
-	padding: 0 1em;
-}
-
 /* RIGHT MODULES */
 #tray{
 	background-color: @tray;
 }
 
-#network{
-	background-color: @network;
-}
+/* #network{ */
+/* 	background-color: @network; */
+/* } */
 
 #backlight{
 	background-color: @backlight;
@@ -155,7 +151,7 @@ window#waybar{
 
 #custom-arrow-left.backlight{
 	color: @backlight;
-	background-color: @network;
+	background-color: @tray;
 }
 
 #custom-arrow-left.wireplumber{

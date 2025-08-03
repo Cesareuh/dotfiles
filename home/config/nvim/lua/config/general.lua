@@ -8,14 +8,15 @@ vim.opt.termguicolors = true
 vim.o.background = "dark"
 
 -- indent options
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.linebreak = true
 
 -- Show number of line
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Highlight while searching word
 vim.o.hlsearch = true

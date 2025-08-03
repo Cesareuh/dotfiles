@@ -16,7 +16,6 @@ echo -ne "$RED"
 read -p "DO YOU REALLY WANT TO EXECUTE IT ? [y/N] " answer
 echo -ne "$RESET"
 
-
 if [ -z $answer ] || [ $answer != "y" ]; then
 	exit 0
 fi
@@ -53,7 +52,7 @@ if [ -z $answer ]; then
 fi
 
 if [ $answer = "y" ]; then
-	yay -S fish starship hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-emoji
+	yay -S fish starship hyprland-git hyprutils-git hyprland-protocols-git hypridle-git hyprlock-git hyprshot-git hyprpaper-git kitty uwsm qt5ct gtk4 gtk3 papirus-icon-theme waybar-cava-git udiskie fuzzel mako ttf-hack-nerd noto-fonts-emoji nordzy-cursors nordzy-hyprcursors
 fi
 
 read -p "Set default shell to fish [y/N] : " answer
@@ -66,44 +65,44 @@ if [ $answer = "y" ]; then
 	chsh -s /usr/bin/fish
 fi
 
-echo "Installing config files"
+read -p "Apply config files to ~/.config [y/N] : " answer
 
-cd $dir/home
+if [ -z $answer ]; then
+	answer="n"
+fi
 
-# Get hidden files
-shopt -s dotglob
+if [ $answer = "y" ]; then
 
-for i in *; do
-	echo $i
-	if [ $i = "config" ]; then
-		cd config
-		for j in *; do
-			if [ -f ~/.config/$j ] || [ -d ~/.config/$j ]; then
-				rm -r ~/.config/$j
-				echo "Deleting link to $j"
-			fi
+	cd $dir/home
 
-			ln -s $PWD/$j ~/.config/$j
-			echo "Link to $j added in ~/.config"
-		done
-		cd ../
-	else
-		if [ -f ~/$i ] || [ -d ~/$i ]; then
-			rm -r ~/$i
-			echo "Deleting link to $i"
+	# Get hidden files
+	shopt -s dotglob
+
+
+	for i in *; do
+		echo $i
+		if [ $i = "config" ]; then
+			cd config
+			for j in *; do
+				ln -s $PWD/$j ~/.config/$j
+				echo "Link to $j added in ~/.config"
+			done
+			cd ../
+		else
+			ln -s $PWD/$i ~/$i
+			echo "Link to $i added in ~/"
 		fi
+	done
 
-		ln -s $PWD/$i ~/$i
-		echo "Link to $i added in ~/"
-	fi
-done
+	shopt -u dotglob
+fi
 
-shopt -u dotglob
-
-echo "Setting up Papirus icons"
+# echo "Setting up Papirus icons"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-echo "Setting up Gruvbox-Dark gtk theme"
+# echo "Setting up Gruvbox-Dark gtk theme"
 gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark"
+
+gsettings set org.gnome.desktop.interface cursor-theme "Nordzy-cursors-white"
 
 systemctl --user enable --now hyprpaper
 systemctl --user enable --now hypridle
